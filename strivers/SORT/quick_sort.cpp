@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+ #include<bits/stdc++.h>
 using namespace std;
 
 int partition(vector<int> &arr, int low, int high){
@@ -10,12 +10,19 @@ int partition(vector<int> &arr, int low, int high){
         while (arr[i]<=pivot &&i<=high-1)
         {
             i++;
+            // cout<<"i  "<<i<<endl;
         }
         while (arr[j]>pivot&&j>=low+1)
         {
             j--;
+            // cout<<"j  "<<j<<endl;
         }
-        if(i<j) swap(arr[i],arr[j]);
+        
+        if(i<j)
+        {
+            cout<<i<<" "<<j<<endl;
+            swap(arr[i],arr[j]);
+        } 
 
     }
     swap(arr[low],arr[j]);
