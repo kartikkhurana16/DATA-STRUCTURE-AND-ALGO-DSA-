@@ -13,8 +13,8 @@ void func(int sqr){
         else{
             high=mid-1;
     }   
-    cout<<ans;
 }
+    cout<<ans;
 }
 int main(){
     int sqr;
