@@ -10,6 +10,7 @@ class Node{
     }
 };
 Node* Convert(vector<int>&arr){
+    
     Node* head= new Node(arr[0]);
     Node* mover=head;
     for(int i=1;i<arr.size();i++){
@@ -17,13 +18,16 @@ Node* Convert(vector<int>&arr){
         mover->next=temp;
         mover=temp;
     }
+    
     return head;
 }
-Node* DeleteHead(Node* head){
-    
+Node* DeteleTail(Node* head){
     Node* temp=head;
-    head=head->next;
-    delete temp;
+    while(temp->next->next!=NULL){
+        temp=temp->next;
+    }
+    delete temp->next;
+    temp->next=nullptr; 
     return head;
 }
 
@@ -38,7 +42,6 @@ Node* Print(Node* head){
 int main(){
     vector<int>arr={1,2,3,5};
     Node* head=Convert(arr);   
-    head= DeleteHead(head);
-
+    head=DeteleTail(head);
     Print(head);
 }
