@@ -24,12 +24,12 @@ void topview(TreeNode* root){
         auto node=temp.first;
         int x=temp.second;
 
-        // if(mp.find(x)==mp.end()){            //
+        if(mp.find(x)==mp.end()){               //
             mp[x]=node;
-        // }
+        }           
 
         if(node->left){
-            q.push({node->left,x+1});           //
+            q.push({node->left,x+1});       //
         }
         if(node->right){
             q.push({node->right,x+1});
