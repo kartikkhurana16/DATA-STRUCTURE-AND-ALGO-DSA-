@@ -25,11 +25,11 @@ vector<int> traversal(Node* root){
         }
         if(prev->right == nullptr){
             prev->right=curr;
+            arr.push_back(curr->data);      //          preorder traversal
             curr=curr->left;
         }
         else{
             prev->right=nullptr;
-            arr.push_back(curr->data);  //  inorder traverl 
             curr=curr->right;
         }
     }
