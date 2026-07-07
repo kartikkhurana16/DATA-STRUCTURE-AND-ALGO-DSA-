@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+double solve(double x,long long n){
+    if(n==0) return 1;
+
+    double half=solve(x,n/2);
+    if(n%2==0){
+        return half*half;
+    }
+    else{
+        return half*half*x;
+    }
+}
+void func(double x,int n){
+    long long N=n;
+    if(N<0){
+        x=1.0/x;
+        N=-N;
+    }
+    cout<<solve(x,N);
+    
+}
+int main(){
+    double x;
+    int n;
+    cin>>x>>n;
+    func(x,n);
+    return 0;
+}
